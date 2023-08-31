@@ -1,0 +1,42 @@
+{% set name = "epix-uhr-dev" %}
+{% set version = "1.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: 1.0.1
+
+source:
+  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
+  sha256: 95952a1b67b9844fc37f60947f30e84378514980e20ceb0c45dd99cb3419b18e
+
+build:
+  skip: True  # [win or osx]
+  noarch: python
+  number: 1
+  script:
+    - "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - python
+    - setuptools
+    - pip
+  run:
+    - python
+
+about:
+  home: https://github.com/slaclab/epix-uhr-dev
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: 'Epix UHR software and firmware'
+  description: |
+    firmware for Epix UHR devices.
+  doc_url: https://github.com/slaclab/epix-uhr-dev
+  dev_url: https://github.com/slaclab/epix-uhr-dev
+
+extra:
+  recipe-maintainers:
+    - valmar
+    - chrisvam
+
