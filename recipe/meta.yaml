@@ -1,18 +1,20 @@
 {% set name = "epix-uhr-dev" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
-  version: 1.0.1
+  version: {{ version }}
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
-  sha256: 95952a1b67b9844fc37f60947f30e84378514980e20ceb0c45dd99cb3419b18e
+  sha256: 6c96f69743e25ceb3c4210e0b7a0af0fd37992ffb68c9df4bc58585bcaf37c55
+  patches:
+    - setup.patch
 
 build:
   skip: True  # [win or osx]
   noarch: python
-  number: 1
+  number: 5
   script:
     - "{{ PYTHON }} -m pip install . -vv"
 

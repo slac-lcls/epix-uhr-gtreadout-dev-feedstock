@@ -26,12 +26,24 @@ index bcef1f6..3f65af0 100644
  from epix_uhr_dev._App              				import *
  from epix_uhr_dev._Root             				import *
  from epix_uhr_dev._UhrFramerAxi                     import *
+diff --git a/firmware/submodules/ePixViewer/__init__.py b/firmware/submodules/ePixViewer/__init__.py
+index a831a16..b601556 100644
+--- a/firmware/submodules/ePixViewer/__init__.py
++++ b/firmware/submodules/ePixViewer/__init__.py
+@@ -1,4 +1,4 @@
+-from software.ePixGUI import *
+-from software.ePixGUIEnvMonitoring import *
+-from software.ePixGUIPseudoScope import *
++from ePixViewer.software.ePixGUI import *
++from ePixViewer.software.ePixGUIEnvMonitoring import *
++from ePixViewer.software.ePixGUIPseudoScope import *
+ #from software.runLiveDisplay import *
 diff --git a/setup.py b/setup.py
 new file mode 100644
-index 0000000..1cce1d3
+index 0000000..656ebeb
 --- /dev/null
 +++ b/setup.py
-@@ -0,0 +1,79 @@
+@@ -0,0 +1,81 @@
 +from setuptools import setup
 +
 +# use softlinks to make the various "board-support-package" submodules
@@ -99,6 +111,8 @@ index 0000000..1cce1d3
 +        'epix_uhr_dev.surf.ethernet.mac',
 +        'epix_uhr_dev.surf.ethernet.gige',
 +        'epix_uhr_dev.ePixViewer',
++        'epix_uhr_dev.ePixViewer.software',
++        'epix_uhr_dev.ePixViewer.software.deviceFiles',
 +    ],
 +    package_dir = {
 +        'epix_uhr_dev': 'firmware/python/epix_uhr_dev',
@@ -108,6 +122,6 @@ index 0000000..1cce1d3
 +        'epix_uhr_dev.LclsTimingCore': 'firmware/submodules/lcls-timing-core/python/LclsTimingCore',
 +        'epix_uhr_dev.epix_hr_core': 'firmware/submodules/epix-hr-core/python/epix_hr_core',
 +        'epix_uhr_dev.surf': 'firmware/submodules/surf/python/surf',
-+        'epix_uhr_dev.ePixViewer': 'firmware/submodules/ePixViewer/software',
++        'epix_uhr_dev.ePixViewer': 'firmware/submodules/ePixViewer',
 +    }
 +)
