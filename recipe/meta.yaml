@@ -1,5 +1,5 @@
 {% set name = "epix-uhr-dev" %}
-{% set version = "1.0.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
-  sha256: 6c96f69743e25ceb3c4210e0b7a0af0fd37992ffb68c9df4bc58585bcaf37c55
+  sha256: 300459b7227e65e06e8ab725fc16756944ac125cf6301f0597c7b53b56618760 
   patches:
     - setup.patch
 
@@ -41,4 +41,4 @@ extra:
   recipe-maintainers:
     - valmar
     - chrisvam
-
+    - melchior
