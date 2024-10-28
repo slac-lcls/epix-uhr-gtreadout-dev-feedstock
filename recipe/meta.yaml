@@ -1,4 +1,4 @@
-{% set name = "epix-uhr-dev" %}
+{% set name = "epix-uhr-gtreadout-dev" %}
 {% set version = "2.0.0" %}
 
 package:
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
-  sha256: 300459b7227e65e06e8ab725fc16756944ac125cf6301f0597c7b53b56618760 
+  sha256: db77f9d11aca78b65f117ea6734800058a6a10706708041e856b4b141535eb3f 
   patches:
     - setup.patch
 
 build:
   skip: True  # [win or osx]
   noarch: python
-  number: 5
+  number: 0
   script:
     - "{{ PYTHON }} -m pip install . -vv"
 
@@ -27,15 +27,15 @@ requirements:
     - python
 
 about:
-  home: https://github.com/slaclab/epix-uhr-dev
+  home: https://github.com/slaclab/epix-uhr-gtreadout-dev
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: 'Epix UHR software and firmware'
   description: |
     firmware for Epix UHR devices.
-  doc_url: https://github.com/slaclab/epix-uhr-dev
-  dev_url: https://github.com/slaclab/epix-uhr-dev
+  doc_url: https://github.com/slaclab/epix-uhr-gtreadout-dev
+  dev_url: https://github.com/slaclab/epix-uhr-gtreadout-dev
 
 extra:
   recipe-maintainers:
