@@ -1,5 +1,5 @@
 {% set name = "epix-uhr-gtreadout-dev" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
-  sha256: db77f9d11aca78b65f117ea6734800058a6a10706708041e856b4b141535eb3f 
+  sha256: a93498eac351098a89cf730bbaa384ef0fed73a253c3d08c0ec015d33bc48cc8  
   patches:
     - setup.patch
 
 build:
   skip: True  # [win or osx]
   noarch: python
-  number: 0
+  number: 2
   script:
     - "{{ PYTHON }} -m pip install . -vv"
 
