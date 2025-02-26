@@ -5,7 +5,7 @@ index d4c7d31..c9b40b7 100644
 @@ -1,3 +1,6 @@
 +import sys 
 +import os 
-+sys.path.append(os.path.dirname(os.path.realpath(__file__) 
++sys.path.append(os.path.dirname(os.path.realpath(__file__))) 
  from epix_uhr_gtreadout_dev._App                           import *
  from epix_uhr_gtreadout_dev._Root                          import *
  from epix_uhr_gtreadout_dev._AsicGtClk                     import *
